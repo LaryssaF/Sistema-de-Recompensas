@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "462eaa46-4d82-41cd-8441-085b0429141a",
+		"name": "RecompensaML",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25720908",
+		"_collection_link": "https://galactic-meteor-336458.postman.co/workspace/New-Team-Workspace~e1cc38c7-3597-4119-8c4c-435069ee5530/collection/25720908-462eaa46-4d82-41cd-8441-085b0429141a?action=share&source=collection_link&creator=25720908"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Responsável",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"responsavel@teste.com\",\r\n    \"senha\": \"senha123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Criança para Responsável",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Maria\",\r\n    \"idade\": 9\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/responsavel/1/criancas"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Responsavel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/responsavel"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Responsavel By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/responsavel/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Saldo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"saldo\": 100.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/responsavel/1/adicionar-saldo"
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Tarefa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Arrumar a cama\",\r\n  \"descricao\": \"Atividade de exemplo\",\r\n  \"frequencia\": \"Diária\",\r\n  \"valor\": 10.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/responsavel/1/tarefas"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Tarefas de Responsavel",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Marcar Conclusão de tarefa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"criancaId\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/responsavel/1/tarefas/1/concluir"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar crianças de Responsavel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/responsavel/1/criancas/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Responsavel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/responsavel/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Tarefas de Responsavel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/responsavel/{{responsavelId}}/tarefas/{{tarefaId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Retirar Saldo de carteira",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/responsavel/1/carteira"
+			},
+			"response": []
+		}
+	]
+}
